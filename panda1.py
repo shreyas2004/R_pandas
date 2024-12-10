@@ -1,10 +1,9 @@
 import pandas as pd
 
-data = pd.read_excel("D:\pandas\sample.xlsx")
-print(data.head(10)) #head() is used to quickly view the first few rows of a DataFrame for a quick preview.
-print(data.tail(10))#tail() is used to quickly view the last few rows of a DataFrame for a quick preview.
-#default value is 5
-print(data.info())#give inforation about data like datatype etc
-print(data.describe())#give describe the data
-print(data.isnull())#give null valuses as true
-print(data.isnull().sum())
+data = pd.read_excel("sample1.xlsx")
+# print(data)
+
+print(data.duplicated())#finds duplicate in first coloum
+print(data["Age"].duplicated())#finds in given  coloum
+print(data["Age"].duplicated().sum())#give total num of duplicates
+print(data.drop_duplicates("Age"))#drops the row contain duplicates
